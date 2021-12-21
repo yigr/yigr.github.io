@@ -1,4 +1,5 @@
 theme: jekyll-theme-minima
 title: Статья Воронина "Хатха-йога".
 description: Статья Воронина "Хатха-йога" в журнале "Наука и жизнь" 1980 год.
-github: is\_project\_page:false
+github: 
+  is\_project\_page:false
