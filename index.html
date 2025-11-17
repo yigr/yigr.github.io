@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Погода в Барнауле</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+
+:root {
+    box-sizing: border-box;
+}
+*,
+::before,
+::after {
+    box-sizing: inherit;
+}
+
+body {
+    color: darkgrey;
+    background-color: #709b90;
+    font-family: Helvetica, Arial, sans-serif;
+}
+body * + * {
+    margin-top: 1.5em;
+}
+
+.container {
+    max-width: 1080px;
+    margin: 0 auto;
+}
+.temp {
+    color: orange;
+}
+.descr {
+    color: darkblue;
+}
+    </style>
+</head>
+<body>
+    <main>
+        <p>Сейчас в Барнауле: &nbsp;<span id="description" class="descr">-</span> 
+        <p>Температура: <span id="temperatura" class="temp">-</span>&nbsp;C</p>
+    </main>
+    <script>
+        async function load(location) {
+            console.log(location);
+            location = 'Barnaul';
+            const url='http://api.openweathermap.org/data/2.5/weather?q=Barnaul&unit=metric&lang=RU';
+            let obj = null;
+            
+            try {
+                obj = await (await fetch(url)).json();
+                temperatura = (obj.main.temp - 273.15).toFixed(1);
+                description = obj.weather[0].description;
+                document.querySelector('#temperatura').textContent=temperatura;
+                document.querySelector('#description').textContent=description;
+            } catch(e) {
+                console.log('error');
+            }
+            
+            console.log(obj);
+        }
+
+    load('Barnaul');
+    </script>
+</body>
+</html>
