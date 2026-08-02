@@ -1,5 +1,5 @@
 # Адреса и настройки.
-## Файлы для настройки
+## Настройки
 - Проверка ключа подписи [проверка ключа](https://www.cryptopro.ru/sites/default/files/products/cades/demopage/cades_bes_sample.html)
 - Файлы настройки [Яндекс облако](https://yadi.sk/d/qCAsUH1yE254NA?w=1)  
 - Chromium-gost [Браузер](https://www.cryptopro.ru/products/chromium-gost)  
